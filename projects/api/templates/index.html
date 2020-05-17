@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Country List</title>	
+</head>
+<body >
+    <br /><br />
+    <div style="text-align: justify; margin-top: 10%;margin-left: 40%;">
+    <label for="countries">Choose a Country:</label>
+	
+	<form action = "http://127.0.0.1:5000/result" method = "POST">
+    <select id="countries" name="countries">
+	{% for country in countryName %}
+      <option value="{{country}}">{{country}}</option> 
+	{% endfor %}	  
+    </select>
+	<p><input type = "submit" value = "submit" style="margin-left: 15%;"/></p>
+	</form>
+    <!--br /><br /><br />
+    <label for="lblCapCity">Capital city</label>
+    <input type="text" disabled id="txtCapCity" />
+    <br /><br /><br />
+    <label for="lblLongitude">Longitude</label>
+    <input type="text" disabled id="txtLongitude" />
+    <br /><br /><br />
+    <label for="lblLatitude">Latitude</label>
+    <input type="text" disabled id="txtLatitude" /-->
+
+</div>
+</body>
+</html>

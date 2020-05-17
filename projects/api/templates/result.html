@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Country List</title>
+    <link rel = "stylesheet"
+         link = "{{ url_for('static', filename = 'css/main.css') }}" ></link>
+</head>
+<body >
+    <br /><br />
+    <div style="text-align: justify; margin-top: 10%;margin-left: 40%;">
+    <label for="countries">Choose a Country:</label>
+	
+	
+    <form action = "http://127.0.0.1:5000/result" method = "POST">
+    <select id="countries" name="countries" style="text-align:center;">
+
+
+       {% for country1 in countryName %}
+      <option value="{{country1}}" {% if country==country1 %} selected {% endif %}>{{country1}}</option>
+	    {% endfor %}
+
+
+    </select>
+	<p><input type = "submit" value = "submit" style="margin-left: 15%;"/></p>
+	</form>
+	
+	
+    <br /><br />
+    <label for="lblCapCity">Capital city</label>
+    <input type="text" disabled id="txtCapCity" value="{{ capital }}"/>
+    <br /><br /><br />
+    <label for="lblLongitude">Longitude</label>
+    <input type="text" disabled id="txtLongitude" value="{{ longitude }}"/>
+    <br /><br /><br />
+    <label for="lblLatitude">Latitude</label>
+    <input type="text" disabled id="txtLatitude" value="{{ latitude }}"/>
+
+	</form>
+</div>
+</body>
+</html>
